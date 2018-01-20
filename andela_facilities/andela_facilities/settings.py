@@ -70,8 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social_django.context_processors.backends',  
-                'social_django.context_processors.login_redirect', 
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -124,7 +124,7 @@ SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '507658856895-h07p6o7968hbkdljpaltrmqshv57ot7v.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'bgFLjn72dVLyNkQUIbEqih8s'
 
-# Configure the JWTs to expire after 1 hour, and allow users to refresh near-expiration tokens
+# Configure the JWTs to expire after 1 hour and allow refresh of nearly expired
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=1),
     'JWT_ALLOW_REFRESH': True,
