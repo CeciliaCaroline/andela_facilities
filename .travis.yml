@@ -3,10 +3,6 @@ language: python
 python:
 - 3.6.3
 
-
-service:
-sqlite
-
 cache: pip
 
 install:
@@ -15,10 +11,10 @@ install:
 - pip install andela_facilities
 
 env:
-CODECLIMATE_REPO_TOKEN: 0e4739e054053fc4d4ebc1675dc31adb9f79f332048268eec69c527caf2e5e69
+  CODECLIMATE_REPO_TOKEN='0e4739e054053fc4d4ebc1675dc31adb9f79f332048268eec69c527caf2e5e69'
 
 script:
 - python manage.py test
 
 after_script:
-coveralls
+- coveralls
