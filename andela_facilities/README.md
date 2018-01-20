@@ -1,5 +1,11 @@
  # Andela Accomodations
 
+ [![Maintainability](https://api.codeclimate.com/v1/badges/7ef52ff63bae08cb40be/maintainability)](https://codeclimate.com/github/CeciliaCaroline/andela_facilities/maintainability)
+
+ [![Coverage Status](https://coveralls.io/repos/github/CeciliaCaroline/andela_facilities/badge.svg?branch=master)](https://coveralls.io/github/CeciliaCaroline/andela_facilities?branch=master)
+
+ [![Build Status](https://travis-ci.org/CeciliaCaroline/andela_facilities.svg?branch=master)](https://travis-ci.org/CeciliaCaroline/andela_facilities)
+
 The Andela accomodations app is an accommodations management app. It allows users to track and manage room allocations, facilitate the clearance of fellows when moving out, track issues in Andela accommodations. 
 
 ## Requirements
