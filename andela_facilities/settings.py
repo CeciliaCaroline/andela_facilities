@@ -148,5 +148,5 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 # Tell nose to measure coverage for specific apps
 NOSE_ARGS = [
     '--with-coverage',
-    '--cover-package=space, auth1, andela_facilities',
+    '--cover-package=space, accounts, andela_facilities',
 ]
