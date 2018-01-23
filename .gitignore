@@ -1,2 +1,9 @@
 venv/
 **/__pycache__/
+**/auth1/
+# vscode settings
+**/.vscode/
+
+
+# node modeules
+**/node_modules/
