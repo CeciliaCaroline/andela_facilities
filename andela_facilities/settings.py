@@ -39,10 +39,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'auth1',
     'social_django',
     'space',
     'django_nose',
+    'accounts',
 )
 
 
@@ -62,7 +62,7 @@ ROOT_URLCONF = 'andela_facilities.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR + 'auth1/templates/'],
+        'DIRS': [BASE_DIR + 'accounts/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -148,5 +148,5 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 # Tell nose to measure coverage for specific apps
 NOSE_ARGS = [
     '--with-coverage',
-    '--cover-package=space',
+    '--cover-package=space, auth1, andela_facilities',
 ]
