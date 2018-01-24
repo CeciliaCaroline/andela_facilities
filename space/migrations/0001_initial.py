@@ -17,12 +17,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Occupant',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(
+                    auto_created=True,
+                    primary_key=True,
+                    serialize=False,
+                    verbose_name='ID')),
                 ('date_created', models.DateTimeField(auto_now_add=True)),
                 ('date_modified', models.DateTimeField(auto_now=True)),
                 ('entry_date', models.DateField()),
                 ('exit_date', models.DateField(blank=True, null=True)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('owner', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE,
+                    to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'abstract': False,
@@ -31,7 +37,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Room',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(
+                    auto_created=True,
+                    primary_key=True,
+                    serialize=False,
+                    verbose_name='ID')),
                 ('date_created', models.DateTimeField(auto_now_add=True)),
                 ('date_modified', models.DateTimeField(auto_now=True)),
                 ('room_name', models.CharField(max_length=255, unique=True)),
@@ -44,11 +54,17 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Space',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(
+                    auto_created=True,
+                    primary_key=True,
+                    serialize=False,
+                    verbose_name='ID')),
                 ('date_created', models.DateTimeField(auto_now_add=True)),
                 ('date_modified', models.DateTimeField(auto_now=True)),
                 ('name', models.CharField(max_length=255, unique=True)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('owner', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE,
+                    to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'abstract': False,
@@ -57,11 +73,16 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='room',
             name='space',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='Space', to='space.Space'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='Space', to='space.Space'),
         ),
         migrations.AddField(
             model_name='occupant',
             name='room',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='Room', to='space.Room'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='Room',
+                to='space.Room'),
         ),
     ]
