@@ -1,5 +1,4 @@
 from django.urls import path, include
-from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework_jwt.views import (refresh_jwt_token, verify_jwt_token,
                                       obtain_jwt_token)
 from .views import RegisterView, GoogleUserView
@@ -14,5 +13,3 @@ urlpatterns = [
         path('obtain-token/', obtain_jwt_token, name='obtain token'),
     ]))
 ]
-
-urlpatterns = format_suffix_patterns(urlpatterns, allowed=['json', 'html'])
