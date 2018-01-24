@@ -1,7 +1,7 @@
 from django.test import TestCase
 from rest_framework.test import APIClient
 from rest_framework import status
-from django.contrib.auth.models import User
+from accounts.models import User
 from space.models import Space, Room, Occupant
 from .base import BaseTestCase
 
@@ -10,7 +10,7 @@ class OccupantModelTestCase(TestCase):
     """This class defines the test suite for the occupant model."""
     def setUp(self):
         """Define the test client and other test variables."""
-        user = User.objects.create(username="nerd")
+        user = User.objects.create(username="nerd", google_id=8)
         space = Space(name='Space 1', owner=user)
         space.save()
         room = Room(room_name="Room 1", capacity=4, space=space)

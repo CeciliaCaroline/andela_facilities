@@ -1,6 +1,6 @@
 from django.test import TestCase
 from rest_framework import status
-from django.contrib.auth.models import User
+from accounts.models import User
 from space.models import Space
 from .base import BaseTestCase
 
@@ -10,7 +10,7 @@ class SpaceModelTestCase(TestCase):
 
     def setUp(self):
         """Define the test client and other test variables."""
-        user = User.objects.create(username="nerd")
+        user = User.objects.create(username="nerd", google_id=6)
         self.space_name = "Space 1"
         self.space = Space(name=self.space_name, owner=user)
 

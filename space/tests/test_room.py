@@ -1,6 +1,6 @@
 from django.test import TestCase
 from rest_framework import status
-from django.contrib.auth.models import User
+from accounts.models import User
 from space.models import Space, Room
 from .base import BaseTestCase
 
@@ -9,7 +9,7 @@ class RoomModelTestCase(TestCase):
     """This class defines the test suite for the space model."""
     def setUp(self):
         """Define the test client and other test variables."""
-        user = User.objects.create(username="nerd")
+        user = User.objects.create(username="nerd", google_id=7)
         space = Space(name='Space 1', owner=user)
         space.save()
         self.room_name = "Room 1"

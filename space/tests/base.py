@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import Group
+from accounts.models import User
 from rest_framework.test import APIClient
 
 
@@ -35,23 +36,28 @@ class BaseTestCase(TestCase):
 
         # assign users to different groups
         # Facilities
-        self.facilities_manager = User.objects.create(username="user0")
+        self.facilities_manager = User.objects.create(
+            username="user0", google_id=1)
         self.add_user_to_group('Facilities', self.facilities_manager)
 
         # Fellows
-        self.fellow = User.objects.create(username="user1")
+        self.fellow = User.objects.create(
+            username="user1", google_id=2)
         self.add_user_to_group('Fellows', self.fellow)
 
         # Finanace
-        self.finance_user = User.objects.create(username="user2")
+        self.finance_user = User.objects.create(
+            username="user2", google_id=3)
         self.add_user_to_group('Finance', self.finance_user)
 
         # Occupants
-        self.occupant = User.objects.create(username="user3")
+        self.occupant = User.objects.create(
+            username="user3", google_id=4)
         self.add_user_to_group('Occupants', self.occupant)
 
         # P&C
-        self.pnc = User.objects.create(username="user4")
+        self.pnc = User.objects.create(
+            username="user4", google_id=5)
         self.add_user_to_group('P&C', self.pnc)
 
     def get(self, status_code, client, url=None, params=None):
