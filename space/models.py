@@ -1,12 +1,13 @@
 from django.db import models
 from andela_facilities.models import Base
+from accounts.models import User
 
 
 # Create your models here.
 class Space(Base):
     """This class represents the space model."""
     name = models.CharField(max_length=255, blank=False, unique=True)
-    owner = models.ForeignKey('auth.User', related_name=None,
+    owner = models.ForeignKey(User, related_name=None,
                               on_delete=models.CASCADE)
 
     def __str__(self):
@@ -34,5 +35,5 @@ class Occupant(Base):
     room = models.ForeignKey(Room,
                              related_name='Room',
                              on_delete=models.CASCADE)
-    owner = models.ForeignKey('auth.User', related_name=None,
+    owner = models.ForeignKey(User, related_name=None,
                               on_delete=models.CASCADE)
