@@ -6,9 +6,6 @@ class User(AbstractUser):
     google_id = models.CharField(max_length=60, unique=True)
     appuser_picture = models.TextField()
 
-    # class Meta:
-    #     abstract = True
-
     def check_diff(self, idinfo):
         """
         Check for differences between request/idinfo and model data.

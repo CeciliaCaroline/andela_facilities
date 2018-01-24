@@ -8,4 +8,4 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         """Meta class to map serializer's fields with the model fields."""
         model = User
-        fields = ('id', 'username', 'appuser_picture')
+        fields = ('id', 'username', 'appuser_picture', 'google_id')
