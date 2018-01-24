@@ -7,3 +7,4 @@ venv/
 
 # node modeules
 **/node_modules/
+.env
