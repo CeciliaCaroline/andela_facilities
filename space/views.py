@@ -202,6 +202,7 @@ class UpdateOccupant(mixins.UpdateModelMixin, generics.GenericAPIView):
     """This class defines the update  behavior of the occupant."""
     queryset = Occupant.objects.all()
     serializer_class = OccupantsSerializer
+    lookup_url_kwarg = "room"
     permission_classes = (
         permissions.IsAuthenticated, IsFacilities)
 
@@ -210,7 +211,7 @@ class UpdateOccupant(mixins.UpdateModelMixin, generics.GenericAPIView):
         space = self.kwargs.get(self.lookup_url_kwarg)
         if isinstance(request.data, QueryDict):
             request.data._mutable = True
-        request.data['space'] = space
+        request.data['room'] = space
         return self.update(request, *args, **kwargs)
 
 

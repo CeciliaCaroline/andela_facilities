@@ -17,7 +17,7 @@ class OccupantModelTestCase(TestCase):
         room.save()
         entry_date = '2017-01-01'
         self.occupant = Occupant(entry_date=entry_date,
-                                 exit_date=None, room=room, owner=user)
+                                 exit_date=None, room=room)
 
     def test_model_can_create_occupant(self):
         """Test the space model can create an occupant."""
@@ -48,7 +48,7 @@ class OccupantViewTestCase(BaseTestCase):
 
         self.occupant_data = {'entry_date': '2017-01-01',
                               'exit_date': '2017-06-06', 'room': self.room,
-                              'owner': self.facilities_manager.id}
+                              }
         self.resp = self.post(self.occupant_data,
                               self.client, "create_occupant",
                               {'space': self.space, 'room': self.room})
