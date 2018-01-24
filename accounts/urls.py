@@ -1,8 +1,7 @@
 from django.urls import path, include
-from .views import home
+from .views import RegisterView
 
 
 urlpatterns = [
-    path('oauth/', include('social_django.urls', namespace='social')),
-    path('home', home, name='home'),
+    path('auth/login', RegisterView.as_view(), name='googleUser'),
 ]
