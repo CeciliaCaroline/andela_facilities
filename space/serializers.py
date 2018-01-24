@@ -30,5 +30,5 @@ class OccupantsSerializer(serializers.ModelSerializer):
         """Meta class to map serializer's fields with the room model fields"""
         model = Occupant
         fields = ('id', 'entry_date', 'exit_date',
-                  'room', 'owner', 'date_created', 'date_modified')
+                  'room', 'date_created', 'date_modified')
         read_only_fields = ('date_created', 'date_modified')

@@ -35,5 +35,3 @@ class Occupant(Base):
     room = models.ForeignKey(Room,
                              related_name='Room',
                              on_delete=models.CASCADE)
-    owner = models.ForeignKey(User, related_name=None,
-                              on_delete=models.CASCADE)
