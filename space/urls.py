@@ -1,9 +1,11 @@
 from django.urls import path, include
+from rest_framework.urlpatterns import format_suffix_patterns
 from .views import (CreateView, ViewSpace, UpdateSpace,
                     RetrieveSpace, DeleteSpace, CreateRoom, ViewRoom,
                     UpdateRoom, DeleteRoom, RetrieveRoom, CreateOccupant,
                     UpdateOccupant, DeleteOccupant, RetrieveOccupant,
                     ViewOccupant)
+
 
 urlpatterns = [
     path('create/', CreateView.as_view(), name="create"),
@@ -42,3 +44,5 @@ urlpatterns = [
         ]))
     ]))
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns, allowed=['json', 'html'])

@@ -97,21 +97,19 @@ class RegisterView(generics.CreateAPIView):
         return response
 
 
+class GoogleUserView(generics.GenericAPIView):
+    """List Google User by Id."""
+    model = User
+    serializer_class = UserSerializer
 
+    def get(self, request):
+        """Custom method to handle get requets"""
+        # import pdb;pdb.set_trace()
+        user_id = self.request.user.id
+        try:
+            app_user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            raise Http404
 
-# class GoogleUserView(generics.GenericAPIView):
-#     """List Google User by Id."""
-#     model = User
-#     serializer_class = UserSerializer
-
-#     def get(self, request):
-#         """Custom method to handle get requets"""
-#         # import pdb;pdb.set_trace()
-#         user_id = self.request.user.id
-#         try:
-#             app_user = User.objects.get(id=user_id)
-#         except User.DoesNotExist:
-#             raise Http404
-
-#         serializer = UserSerializer(app_user)
-#         return Response(serializer.data)
+        serializer = UserSerializer(app_user)
+        return Response(serializer.data)
